@@ -42,15 +42,15 @@ function CropRecommendation() {
                     lon: geoLocation.coords.longitude
                 };
 
-                weatherService.getCurrentWeather(locationData).then((data) => {
-                    setHumidity(data.current.humidity);
-                    setTemp(data.current.temp);
-                });
+                // weatherService.getCurrentWeather(locationData).then((data) => {
+                //     setHumidity(data.current.humidity);
+                //     setTemp(data.current.temp);
+                // });
         
-                weatherService.getCurrentRainfall(locationData).then((data) => {
-                    console.log(data);
-                    setRain(data.data[0].precip);
-                });
+                // weatherService.getCurrentRainfall(locationData).then((data) => {
+                //     console.log(data);
+                //     setRain(data.data[0].precip);
+                // });
 
             }, failureCallback);
 

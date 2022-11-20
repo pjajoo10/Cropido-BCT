@@ -52,50 +52,50 @@ function Dashboard() {
                     lon: geoLocation.coords.longitude
                 };
 
-                weatherService.getWeather(locationData).then((data) => {
-                    setIsLoaded(true);
+                // weatherService.getWeather(locationData).then((data) => {
+                //     setIsLoaded(true);
         
-                    data.daily.forEach(day => {
+                //     data.daily.forEach(day => {
         
-                        const dateObject = new Date(day.dt * 1000);
-                        const weekday = dateObject.toLocaleString("en-US", {weekday: "long"});
-                        // const numericDate = dateObject.toLocaleString("en-US", {day: "numeric"});
+                //         const dateObject = new Date(day.dt * 1000);
+                //         const weekday = dateObject.toLocaleString("en-US", {weekday: "long"});
+                //         // const numericDate = dateObject.toLocaleString("en-US", {day: "numeric"});
         
-                        newTempChartMin.push(day.temp.min);
-                        newTempChartMax.push(day.temp.max);
-                        newTempChartLabels.push(weekday);
-                        newHumidityChart.push(day.humidity);
-                    });
+                //         newTempChartMin.push(day.temp.min);
+                //         newTempChartMax.push(day.temp.max);
+                //         newTempChartLabels.push(weekday);
+                //         newHumidityChart.push(day.humidity);
+                //     });
         
-                    data.hourly.forEach(hour => {
+                //     data.hourly.forEach(hour => {
         
-                        const dateObject = new Date(hour.dt * 1000);
-                        const hourTime = dateObject.toLocaleString("en-US", {hour: "numeric"});
+                //         const dateObject = new Date(hour.dt * 1000);
+                //         const hourTime = dateObject.toLocaleString("en-US", {hour: "numeric"});
         
-                        newTempChartToday.push(hour.temp);
-                        newTempChartTodayLabels.push(hourTime);
-                    });
+                //         newTempChartToday.push(hour.temp);
+                //         newTempChartTodayLabels.push(hourTime);
+                //     });
         
-                    setTempChartMin(newTempChartMin);
-                    setTempChartMax(newTempChartMax);
-                    setTempChartToday(newTempChartToday);
-                    setTempChartLabels(newTempChartLabels);
-                    setHumidityChartLabels(newTempChartLabels);
-                    setHumidityChart(newHumidityChart);
-                    setTempChartTodayLabels(newTempChartTodayLabels);
+                //     setTempChartMin(newTempChartMin);
+                //     setTempChartMax(newTempChartMax);
+                //     setTempChartToday(newTempChartToday);
+                //     setTempChartLabels(newTempChartLabels);
+                //     setHumidityChartLabels(newTempChartLabels);
+                //     setHumidityChart(newHumidityChart);
+                //     setTempChartTodayLabels(newTempChartTodayLabels);
         
-                });
+                // });
         
-                weatherService.getCurrentRainfall(locationData).then((data) => {
-                    console.log(data);
-                    data.data.forEach(day => {
-                        newRainfallChart.push(day.precip);
-                        newRainfallLabels.push(day.valid_date);
-                    });
+                // weatherService.getCurrentRainfall(locationData).then((data) => {
+                //     console.log(data);
+                //     data.data.forEach(day => {
+                //         newRainfallChart.push(day.precip);
+                //         newRainfallLabels.push(day.valid_date);
+                //     });
 
-                    setRainfallChart(newRainfallChart);
-                    setRainfallChartLabels(newRainfallLabels);
-                });            
+                //     setRainfallChart(newRainfallChart);
+                //     setRainfallChartLabels(newRainfallLabels);
+                // });            
 
             }, failureCallback);
 

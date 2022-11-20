@@ -4,8 +4,11 @@ import { AiFillBug } from "react-icons/ai"
 import { HiHome } from "react-icons/hi";
 import { RiPlantFill } from "react-icons/ri";
 import { FaRupeeSign } from "react-icons/fa";
+import { GiReceiveMoney } from "react-icons/gi"
 import DiseaseDetection from "views/DiseaseDetectionPage";
 import PricePrediction from "views/PricePredictionPage";
+import CrowdfundPage from "views/CrowdfundPage";
+import CampaignDisplay from "views/CampaignDisplay";
 
 var routes = [
   {
@@ -34,6 +37,18 @@ var routes = [
     name: "Price Prediction",
     icon: <FaRupeeSign/>,
     component: PricePrediction,
+    layout: "/user"
+  },
+  {
+    path: "/crowdfund",
+    name: "Raise Funds",
+    icon: <GiReceiveMoney/>,
+    component: CrowdfundPage,
+    layout: "/user"
+  },
+  {
+    path: "/crowdfund/campaigns",
+    component: CampaignDisplay,
     layout: "/user"
   }
 ];
